@@ -1,14 +1,18 @@
 <template lang="pug">
-  footer.footer: .container: .content.has-text-centered
-    p: a.button.is-medium.is-link(href='http://chalk.pe/voca')
-      span.icon.is-medium: i.fa.fa-github-alt
-    p
-      strong voca
-      | &nbsp;by&nbsp;
-      a(href='http://chalk.pe') ChalkPE
-      br
-      | The source code is licensed under the&nbsp;
-      a(href='http://opensource.org/licenses/mit-license.php') MIT License
+  footer
+    section.container.grid-960
+      p
+        a(href='https://www.facebook.com/jnjcomu/') Facebook
+        | &nbsp;|&nbsp;
+        a(href='https://github.com/jnjcomu/edison-web.git') GitHub Repository
+        | &nbsp;|&nbsp;
+        a(href='mailto:chalkpe@gmail.com') Contact
+      p
+        | Copyright &copy; 2017&nbsp;
+        a(href='https://github.com/jnjcomu') JNJ Communications
+        | . Licensed under the&nbsp;
+        a(href='http://opensource.org/licenses/mit-license.php') MIT License
+        | .
 </template>
 
 <script>
@@ -16,8 +20,16 @@
   }
 </script>
 
-<style scoped>
-  .icon {
-    color: black;
+<style scoped lang="less">
+  @import '~spectre.css/src/variables.less';
+
+  footer {
+    color: @gray-color;
+    background-color: @bg-color;
+    padding: 3 * @layout-padding;
+
+    a {
+      color: @gray-color-dark;
+    }
   }
 </style>

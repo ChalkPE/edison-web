@@ -6,16 +6,10 @@ import ExtractTextPlugin from 'extract-text-webpack-plugin'
 const vueLoaders = {
   html: 'pug-loader',
   css: ExtractTextPlugin.extract({
-    use: 'css-loader',
-    fallback: 'vue-style-loader'
+    fallback: 'vue-style-loader', use: 'css-loader'
   }),
-  scss: ExtractTextPlugin.extract({
-    fallback: 'vue-style-loader',
-    use: ['css-loader', 'sass-loader']
-  }),
-  sass: ExtractTextPlugin.extract({
-    fallback: 'vue-style-loader',
-    use: ['css-loader', 'sass-loader?indentedSyntax']
+  less: ExtractTextPlugin.extract({
+    fallback: 'vue-style-loader', use: ['css-loader', 'less-loader']
   })
 }
 
@@ -28,10 +22,7 @@ export default {
 
   plugins: [
     new ExtractTextPlugin('bundle.css'),
-    new HtmlPlugin({
-      title: 'edison',
-      template: 'app/app.pug'
-    })
+    new HtmlPlugin({ title: 'Edison', template: 'app/app.pug' })
   ],
 
   module: {
@@ -42,9 +33,9 @@ export default {
           use: 'css-loader', fallback: 'style-loader'
         })
       }, {
-        test: /\.s[a|c]ss$/,
+        test: /\.less$/,
         use: ExtractTextPlugin.extract({
-          use: ['css-loader', 'sass-loader'], fallback: 'style-loader'
+          use: ['css-loader', 'less-loader'], fallback: 'style-loader'
         })
       }, {
         test: /\.pug$/,

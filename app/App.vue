@@ -1,14 +1,13 @@
 <template lang="pug">
   #app
     app-nav
-    section.section: .container
-      router-view
+    main.container.grid-960: router-view
     app-footer
 </template>
 
 <script>
-  import './app.sass'
-  
+  import 'spectre.css'
+
   import AppNav from './components/AppNav.vue'
   import AppFooter from './components/AppFooter.vue'
 
@@ -17,12 +16,17 @@
   }
 </script>
 
-<style lang="sass" scoped>
-  #app
-    display: flex
-    min-height: 100vh
-    flex-direction: column
+<style lang="less" scoped>
+  @import '~spectre.css/src/variables.less';
 
-  section
-    flex: 1 0 auto
+  #app {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    padding: @layout-padding;
+  }
 </style>

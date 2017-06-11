@@ -1,23 +1,29 @@
 <template lang="pug">
-  nav.nav.has-shadow: .container
-    .nav-left
-      router-link.nav-item.is-tab.is-hidden-mobile(
-        v-for='link in links', active-class='is-active',
-        :key='link.url', :exact='link.exact', :to='link.url') {{ link.name }}
+  header: .navbar.container.grid-960
+    section.navbar-section
+      router-link.navbar-brand.mr-10(to='/') Edison
+      router-link.btn.btn-link(to='/people') People
+    section.navbar-section
+      router-link.btn.btn-primary(to='/auth') Sign in
 </template>
 
 <script>
-  const exact = true
-
   export default {
-    name: 'navigation',
-    data: () => ({
-      links: [
-        { url: '/', name: 'edison', exact },
-        { url: '/learn', name: 'Learn' },
-        { url: '/exam', name: 'Exam' },
-        { url: '/ranks', name: 'Ranks' }
-      ]
-    })
+    name: 'navigation'
   }
 </script>
+
+<style lang="less" scoped>
+  @import '~spectre.css/src/variables.less';
+
+  header {
+    color: @gray-color;
+    background-color: @bg-color;
+
+    .navbar {
+      padding: @layout-padding;
+    }
+  }
+
+
+</style>
