@@ -21,9 +21,7 @@
     background-color: @bg-color;
 
     .navbar {
-      padding: @layout-padding;
+      padding: @layout-padding * 1.3;
     }
   }
-
-
 </style>

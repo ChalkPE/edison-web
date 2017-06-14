@@ -7,6 +7,7 @@
 
 <script>
   import 'spectre.css'
+  import 'spectre.css/spectre-icons.less';
 
   import AppNav from './components/AppNav.vue'
   import AppFooter from './components/AppFooter.vue'
