@@ -4,7 +4,7 @@
     h4.empty-title You are not authorized
     p.empty-subtitle Click the button to sign in.
     .empty-action
-      button.btn.btn-primary Sign in
+      router-link.btn.btn-primary(to='/auth') Sign in
 </template>
 
 <script>
@@ -12,5 +12,10 @@
   }
 </script>
 
-<style lang="css">
+<style lang="less" scoped>
+  .empty {
+    .icon {
+      font-size: 4rem;
+    }
+  }
 </style>

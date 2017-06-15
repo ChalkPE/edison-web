@@ -3,17 +3,43 @@
     form
       .form-group
         label.form-label(for='username') Username
-        input.form-input#username(type='text', placeholder='Username')
+        input.form-input#username(v-model='username', :class='errorClass', type='text', placeholder='Username')
+
       .form-group
         label.form-label(for='password') Password
-        input.form-input#password(type='password', placeholder='Password')
+        input.form-input#password(v-model='password', :class='errorClass', type='password', placeholder='Password')
 
-      .form-group.pt-10
-        button.btn.btn-primary.btn-block Authenticate
+      .form-group
+        div(:class='errorClass')
+        p.form-input-hint.pb-5(v-if='error')
+          i.icon.icon-cross
+          | &nbsp;{{ error }}
+        div.pt-5(v-else)
+        button.btn.btn-primary.btn-block(@click='auth') Authenticate
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
+    data: () => ({ username: '', password: '' }),
+
+    computed: mapState({
+      error: 'authError',
+
+      errorClass(state) {
+        return this.error && 'is-error'
+      }
+    }),
+
+    methods: {
+      auth() {
+        this.$store.dispatch('auth', {
+          username: this.username,
+          password: this.password
+        })
+      }
+    }
   }
 </script>
 

@@ -1,7 +1,8 @@
 <template lang="pug">
   #app
     app-nav
-    main.container.grid-960: router-view
+    main.container.grid-960.mt-10
+      router-view
     app-footer
 </template>
 
