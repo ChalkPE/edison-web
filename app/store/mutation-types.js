@@ -1,2 +1,1 @@
-export const SAVE_TOKEN = 'saveToken'
-export const AUTH_ERROR = 'authError'
+export const SET_TOKEN = 'SET_TOKEN'

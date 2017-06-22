@@ -66,6 +66,12 @@ export default {
     host: '0.0.0.0',
     historyApiFallback: true,
     proxy: { '**': `http://localhost:20409` }
+  },
+
+  node: {
+    net: 'empty',
+    tls: 'empty',
+    dns: 'empty'
   }
 }
 

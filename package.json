@@ -32,6 +32,7 @@
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-config-vue": "^2.0.2",
+    "eslint-plugin-html": "^3.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-node": "^4.2.2",
     "eslint-plugin-promise": "^3.5.0",
@@ -54,6 +55,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
+    "jsonwebtoken": "^7.4.1",
     "moment": "^2.18.1",
     "spectre.css": "^0.2.14",
     "vue": "^2.3.3",

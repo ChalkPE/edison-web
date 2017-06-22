@@ -22,22 +22,28 @@
   import { mapState } from 'vuex'
 
   export default {
-    data: () => ({ username: '', password: '' }),
+    data: () => ({ username: '', password: '', error: null }),
 
-    computed: mapState({
-      error: 'authError',
+    created () {
+      if (this.token) this.$router.push('/')
+    },
 
-      errorClass(state) {
+    computed: {
+      ...mapState(['token']),
+
+      errorClass (state) {
         return this.error && 'is-error'
       }
-    }),
+    },
 
     methods: {
-      auth() {
+      auth () {
         this.$store.dispatch('auth', {
           username: this.username,
           password: this.password
         })
+        .then(() => this.$router.push('/'))
+        .catch(err => (this.error = err.response ? err.response.data && err.response.data.message : err.message))
       }
     }
   }

@@ -6,9 +6,11 @@ import App from './App.vue'
 import store from './store'
 import router from './router'
 
-console.log(new Vue({
+const vm = new Vue({
   store,
   router,
   el: '#app',
   render: (h) => h(App)
-}))
+})
+
+console.log(vm)
