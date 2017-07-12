@@ -1,7 +1,7 @@
 {
   "name": "edison-web",
   "version": "1.0.0",
-  "description": "edison web panel",
+  "description": "Legacy edison front-end",
   "main": "index.js",
   "scripts": {
     "test": "eslint . --ext .js,.vue",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jnjcomu/edison-web.git"
+    "url": "git+https://github.com/ChalkPE/edison-web.git"
   },
   "keywords": [
     "edison"
   ],
-  "author": "jnjcomu",
+  "author": "ChalkPE <chalk@chalk.pe>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jnjcomu/edison-web/issues"
+    "url": "https://github.com/ChalkPE/edison-web/issues"
   },
-  "homepage": "https://github.com/jnjcomu/edison-web#readme",
+  "homepage": "https://github.com/ChalkPE/edison-web#readme",
   "devDependencies": {
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
