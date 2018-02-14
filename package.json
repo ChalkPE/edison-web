@@ -55,7 +55,7 @@
   "dependencies": {
     "axios": "^0.16.1",
     "babel-polyfill": "^6.23.0",
-    "jsonwebtoken": "^7.4.1",
+    "jsonwebtoken": "^8.0.0",
     "moment": "^2.18.1",
     "spectre.css": "^0.2.14",
     "vue": "^2.3.3",
